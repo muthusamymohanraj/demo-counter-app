@@ -23,6 +23,14 @@ pipeline {
                 
             }
         }
+        stage ('maven build') {
+            steps {
+                script {
+                    sh 'mvn clean install'
+                }
+                
+            }
+        }
 
         
     }
@@ -30,5 +38,4 @@ pipeline {
 }
 
                         
-
 
