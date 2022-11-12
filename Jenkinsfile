@@ -16,7 +16,7 @@ pipeline {
         }
 
         stage ('mvn inetegration testing') {
-            stpes {
+            steps {
                 script {
                     sh 'mvn clean install'
                 }
@@ -28,6 +28,7 @@ pipeline {
     }
         
 }
+
                         
 
 
