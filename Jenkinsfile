@@ -18,7 +18,7 @@ pipeline {
         stage ('mvn inetegration testing') {
             steps {
                 script {
-                    sh 'mvn clean install'
+                    sh 'mvn verify -DskipUnitTests'
                 }
                 
             }
