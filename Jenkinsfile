@@ -1,21 +1,24 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage ('checkout'){
+        stage ('git checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/muthusamymohanraj/demo-counter-app.git'
+                git url
             }
         }
-
-        stage('maven test') {
+        stage ('Maven build') {
             steps {
-                script {
-                    sh 'mvn test'
+                script{
+                     sh 'mvn test'
                 }
             }
         }
 
-        
-    }
-        
+        stage ('mvn inetegration testing') {
+            stpes {
+                script {
+                    sh 'mvn clean install'
+                }
+            }
+        }
 }
