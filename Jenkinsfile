@@ -7,8 +7,13 @@ pipeline {
             }
         }
         stage('maven test') {
+            steps {
+                script {
+                    sh 'mvn test'
+                }
+            }
 
-            sh 'mvn test'
+            
 
         }
     }
