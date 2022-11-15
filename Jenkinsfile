@@ -34,7 +34,7 @@ pipeline {
         stage ('sonar code check') {
             steps{
                 script {
-                    withSonarQubeEnv(credentialsId: 'sonar-cred') {
+                    withSonarQubeEnv(credentialsId: 'sonar_cred') {
                         sh 'mvn clean package -e sonar:sonar'
    
                     }
